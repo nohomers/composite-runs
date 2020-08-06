@@ -1,0 +1,23 @@
+name: Lucas' test composite action
+author: Lucas Costi
+description: This tests a composite action
+
+inputs:
+  person_to_greet:
+    description: 'The person to greet'
+    required: false
+    default: 'Homer'
+outputs:
+  greet_result:
+    description: If the greeting was successful.
+
+runs:
+  using: "composite"
+  steps:
+    - name: step 1
+      run: echo "composite step 1 - I am a greeting composite action"
+    - name: step 2
+      run: echo "composite step 2 - Hello $person_to_greet"
+    - name: step 3 set output
+      run: echo ""::set-output name={greet_result}::{true}""
+
