@@ -18,7 +18,7 @@ runs:
       run: echo "composite step 1 - I am a greeting composite action"
       shell: bash
     - name: step 2
-      run: printenv
+      run: echo "composite step 2 - Hello ${{ inputs.person_to_greet }}"
       shell: bash
     - name: step 3 set output
       run: echo "::set-output name={greet_result}::{true}"
