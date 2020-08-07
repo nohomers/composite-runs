@@ -16,8 +16,10 @@ runs:
   steps:
     - name: step 1
       run: echo "composite step 1 - I am a greeting composite action"
+      shell: bash
     - name: step 2
       run: echo "composite step 2 - Hello $person_to_greet"
+      shell: bash
     - name: step 3 set output
-      run: echo ""::set-output name={greet_result}::{true}""
-
+      run: echo "::set-output name={greet_result}::{true}"
+      shell: bash
